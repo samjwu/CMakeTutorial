@@ -11,6 +11,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # to the source code
 configure_file(TutorialConfig.h.in TutorialConfig.h)
 
+# TODO 1: Create library target MathFunctions
+# and pass in source files as arguments
+add_library(MathFunctions MathFunctions.cxx mysqrt.cxx)
+
 # TODO 2: Use add_subdirectory() to add MathFunctions to this project
 
 # add the executable

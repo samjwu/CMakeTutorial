@@ -1,3 +1,5 @@
+include(MakeTable.cmake)
+
 add_library(MathFunctions MathFunctions.cxx)
 
 # should we use our own math functions

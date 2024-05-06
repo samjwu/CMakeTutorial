@@ -8,6 +8,7 @@ if (USE_MYMATH)
   # library that just does sqrt
   add_library(SqrtLibrary STATIC
               mysqrt.cxx
+              ${CMAKE_CURRENT_BINARY_DIR}/Table.h
               )
 
   # link SqrtLibrary to tutorial_compiler_flags

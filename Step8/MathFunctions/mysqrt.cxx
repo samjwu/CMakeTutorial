@@ -17,8 +17,9 @@ double mysqrt(double x)
   if (x >= 1 && x < 10) {
     std::cout << "Use the table to help find an initial value " << std::endl;
     result = sqrtTable[static_cast<int>(x)];
+    return result;
   }
-
+  
   // do ten iterations
   for (int i = 0; i < 10; ++i) {
     if (result <= 0) {

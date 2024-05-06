@@ -13,23 +13,6 @@ if (USE_MYMATH)
   # link SqrtLibrary to tutorial_compiler_flags
   target_link_libraries(SqrtLibrary PUBLIC tutorial_compiler_flags)
 
-  # does this system provide the log and exp functions?
-  include(CheckCXXSourceCompiles)
-  check_cxx_source_compiles("
-    #include <cmath>
-    int main() {
-      std::log(1.0);
-      return 0;
-    }
-  " HAVE_LOG)
-  check_cxx_source_compiles("
-    #include <cmath>
-    int main() {
-      std::exp(1.0);
-      return 0;
-    }
-  " HAVE_EXP)
-
   # add compile definitions
   if(HAVE_LOG AND HAVE_EXP)
     target_compile_definitions(SqrtLibrary

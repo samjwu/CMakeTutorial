@@ -1,6 +1,7 @@
-#include "mysqrt.h"
-
 #include <iostream>
+
+#include "mysqrt.h"
+#include "Table.h"
 
 namespace mathfunctions {
 namespace detail {

@@ -11,6 +11,10 @@ if (USE_MYMATH)
               ${CMAKE_CURRENT_BINARY_DIR}/Table.h
               )
 
+  target_include_directories(SqrtLibrary PRIVATE
+                            ${CMAKE_CURRENT_BINARY_DIR}
+                            )
+
   # link SqrtLibrary to tutorial_compiler_flags
   target_link_libraries(SqrtLibrary PUBLIC tutorial_compiler_flags)
 

@@ -26,7 +26,8 @@ if(USE_MYMATH)
                              ${CMAKE_CURRENT_BINARY_DIR}
                              )
 
-  # state that SqrtLibrary needs position independent code when the default is shared libraries
+  # state that SqrtLibrary needs position independent code
+  # when the default is shared libraries
   set_target_properties(SqrtLibrary PROPERTIES
                         POSITION_INDEPENDENT_CODE ${BUILD_SHARED_LIBS}
                         )
@@ -39,6 +40,10 @@ endif()
 
 # link MathFunctions to tutorial_compiler_flags
 target_link_libraries(MathFunctions PUBLIC tutorial_compiler_flags)
+
+# define the symbol stating to use declspec(dllexport)
+# when building on windows
+target_compile_definitions(MathFunctions PRIVATE "EXPORTING_MYMATH")
 
 # install libs
 set(installable_libs MathFunctions tutorial_compiler_flags)

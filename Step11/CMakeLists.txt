@@ -88,3 +88,11 @@ install(EXPORT MathFunctionsTargets
   FILE MathFunctionsTargets.cmake
   DESTINATION lib/cmake/MathFunctions
 )
+
+# install configuration file for MathFunctionsTargets.cmake
+install(EXPORT MathFunctionsTargets
+  FILE MathFunctionsTargets.cmake
+  DESTINATION lib/cmake/MathFunctions
+)
+
+include(CMakePackageConfigHelpers)

@@ -110,3 +110,10 @@ write_basic_package_version_file(
   VERSION "${Tutorial_VERSION_MAJOR}.${Tutorial_VERSION_MINOR}"
   COMPATIBILITY AnyNewerVersion
 )
+
+# install generated config files
+install(FILES
+  ${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfig.cmake
+  ${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfigVersion.cmake
+  DESTINATION lib/cmake/MathFunctions
+  )

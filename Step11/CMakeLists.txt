@@ -89,13 +89,17 @@ install(EXPORT MathFunctionsTargets
   DESTINATION lib/cmake/MathFunctions
 )
 
-# install configuration file for MathFunctionsTargets.cmake
+# install the targets exported by the MathFunctions project
+# create a MathFunctionsTargets.cmake file with info about these targets
 install(EXPORT MathFunctionsTargets
   FILE MathFunctionsTargets.cmake
   DESTINATION lib/cmake/MathFunctions
 )
 
+# include CMakePackageConfigHelpers module
+# utilities for generating package configuration files
 include(CMakePackageConfigHelpers)
+
 # generate the config file that includes the exports
 configure_package_config_file(${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
   "${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfig.cmake"
@@ -117,3 +121,8 @@ install(FILES
   ${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsConfigVersion.cmake
   DESTINATION lib/cmake/MathFunctions
   )
+
+# export the MathFunctionsTargets targets 
+export(EXPORT MathFunctionsTargets
+  FILE "${CMAKE_CURRENT_BINARY_DIR}/MathFunctionsTargets.cmake"
+)

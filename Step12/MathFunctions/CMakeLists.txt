@@ -1,10 +1,10 @@
+# add the library that runs
+add_library(MathFunctions MathFunctions.cxx)
+
 # set version
 set_property(TARGET MathFunctions PROPERTY VERSION "1.0.0")
 # set shared object version
 set_property(TARGET MathFunctions PROPERTY SOVERSION "1")
-
-# add the library that runs
-add_library(MathFunctions MathFunctions.cxx)
 
 # state that anybody linking to us needs to include the current source dir
 # to find MathFunctions.h, while we don't.

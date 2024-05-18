@@ -1,3 +1,8 @@
+# set version
+set_property(TARGET MathFunctions PROPERTY VERSION "1.0.0")
+# set shared object version
+set_property(TARGET MathFunctions PROPERTY SOVERSION "1")
+
 # add the library that runs
 add_library(MathFunctions MathFunctions.cxx)
 
